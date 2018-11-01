@@ -8,6 +8,8 @@
 */
 
 const http = require('http');
+const config = require('./lib/config');
+
 
 const httpServer = http.createServer((req,res)=>{
     console.log("Request..." + req.headers);
@@ -15,6 +17,6 @@ const httpServer = http.createServer((req,res)=>{
     res.end('Hello World\n');
 });
 
-httpServer.listen(3000, ()=>{
-    console.log("HTTP Server is listening on port 3000...");
+httpServer.listen(config.httpPort, ()=>{
+    console.log("HTTP Server is listening on port..." + config.httpPort);
 });
