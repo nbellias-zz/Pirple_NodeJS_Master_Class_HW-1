@@ -10,7 +10,9 @@
 const http = require('http');
 
 const httpServer = http.createServer((req,res)=>{
-    console.log("Request...");
+    console.log("Request..." + req.headers);
+    //Send the response
+    res.end('Hello World\n');
 });
 
 httpServer.listen(3000, ()=>{
